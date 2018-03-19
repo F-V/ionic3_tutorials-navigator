@@ -8,11 +8,25 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <ion-list>
+    <ion-item>
+      <ion-label>Destination</ion-label>
+      <ion-select [(ngModel)]="destination">
+        <ion-option value="5 Graaf Karel de Goedelaan, 8500 Kortrijk, belgium">Graaf Karel de Goedelaan 5, 8500 Kortrijk</ion-option>
+        <ion-option value="50.8245564,3.2496834">50.8245564,3.2496834 (GKG)</ion-option>
+        <ion-option value="Howest, campus Graaf Karel de Goedelaan">howest alias</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Start</ion-label>
+      <ion-select [(ngModel)]="start">
+        <ion-option value="">None (current location)</ion-option>
+        <ion-option value="Manchester, UK">Manchester, UK</ion-option>
+        <ion-option value="53.493002,-2.240080">53.49,-2.24 (Manchester)</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="navigate()">Navigate</button>
+    </ion-item>
+  </ion-list>
 </ion-content>
